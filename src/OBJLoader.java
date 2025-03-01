@@ -55,11 +55,11 @@ public class OBJLoader extends Object {
     }
 
     // OpenGLで使用するディスプレイリスト（display list）を作成
-    public int createDisplayList(Obj model) {
+    public int createDisplayList(Obj model, int textureID) {
         int displayList = GL11.glGenLists(1);
         GL11.glNewList(displayList, GL_COMPILE);
         {
-            this.render(model);
+            this.render(model, textureID);
         }
         GL11.glEndList();
         return displayList;
@@ -71,8 +71,12 @@ public class OBJLoader extends Object {
      * @param model the <code>Obj</code> file to be rendered
      */
     // Obj モデルの描画を行う
-    public void render(Obj model) {
+    public void render(Obj model, int textureID) {
         GL11.glMaterialf(GL_FRONT, GL_SHININESS, 120);
+
+        GL11.glEnable(GL11.GL_TEXTURE_2D);
+        GL11.glBindTexture(GL11.GL_TEXTURE_2D, textureID);
+
         GL11.glBegin(GL_TRIANGLES);
         {
             for (Obj.Face face : model.getFaces()) {
@@ -93,18 +97,19 @@ public class OBJLoader extends Object {
                 };
                 {
                     GL11.glNormal3f(normals[0].getX(), normals[0].getY(), normals[0].getZ());
-                    GL11.glTexCoord2f(texCoords[0].getX(), texCoords[0].getY());
+                    GL11.glTexCoord2f(texCoords[0].getX(), 1 - texCoords[0].getY());
                     GL11.glVertex3f(vertices[0].getX(), vertices[0].getY(), vertices[0].getZ());
                     GL11.glNormal3f(normals[1].getX(), normals[1].getY(), normals[1].getZ());
-                    GL11.glTexCoord2f(texCoords[1].getX(), texCoords[1].getY());
+                    GL11.glTexCoord2f(texCoords[1].getX(), 1 - texCoords[1].getY());
                     GL11.glVertex3f(vertices[1].getX(), vertices[1].getY(), vertices[1].getZ());
                     GL11.glNormal3f(normals[2].getX(), normals[2].getY(), normals[2].getZ());
-                    GL11.glTexCoord2f(texCoords[2].getX(), texCoords[2].getY());
+                    GL11.glTexCoord2f(texCoords[2].getX(), 1 - texCoords[2].getY());
                     GL11.glVertex3f(vertices[2].getX(), vertices[2].getY(), vertices[2].getZ());
                 }
             }
         }
         GL11.glEnd();
+        GL11.glDisable(GL11.GL_TEXTURE_2D);
     }
 
     /**

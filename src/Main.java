@@ -1,5 +1,9 @@
 import javax.swing.*;
+
+import org.newdawn.slick.opengl.TextureLoader;
+
 import java.awt.*;
+import java.io.InputStream;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +14,6 @@ public class Main {
 
         // パネルを作成（レイアウトを使用）
         JPanel panel = new JPanel();
-        
 
         // ボタンを作成
         JButton button = new JButton("クリック");
@@ -30,7 +33,7 @@ public class Main {
     }
 
     public static void onButtonClick(JFrame frame) {
-        //JOptionPane.showMessageDialog(frame, "ボタンがクリックされました！");
+        // JOptionPane.showMessageDialog(frame, "ボタンがクリックされました！");
         Lottery lot = new Lottery();
         lot.lottery();
     }

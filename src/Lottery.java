@@ -2,7 +2,8 @@ public class Lottery {
     public void lottery() {
         Set_randam randam = new Set_randam();
         int i = randam.set_randam(65536);
-        System.out.println("i: " + i);
+        System.out.printf("i:%d \n",i);
+
 
         // 青 3%
         // 緑 4％
