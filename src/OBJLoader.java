@@ -28,11 +28,15 @@
 import java.io.File;
 import java.io.InputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL12;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
+import org.newdawn.slick.opengl.Texture;
+import org.newdawn.slick.opengl.TextureLoader;
 
 import static org.lwjgl.opengl.GL11.GL_FRONT;
 import static org.lwjgl.opengl.GL11.GL_COMPILE;
@@ -63,6 +67,33 @@ public class OBJLoader extends Object {
         }
         GL11.glEndList();
         return displayList;
+    }
+
+    // テクスチャ読み込み
+    public static int loadTexture(String filePath) {
+        try {
+            // 画像を読み込む
+            InputStream in = TextureLoader.class.getResourceAsStream(filePath);
+            if (in == null) {
+                throw new IOException("Texture file not found: " + filePath);
+            }
+
+            Texture texture = TextureLoader.getTexture("PNG", in);
+
+            int textureID = texture.getTextureID();
+
+            // テクスチャのパラメータ設定
+            GL11.glBindTexture(GL11.GL_TEXTURE_2D, textureID);
+            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_LINEAR);
+            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
+            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_S, GL12.GL_CLAMP_TO_EDGE);
+            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_T, GL12.GL_CLAMP_TO_EDGE);
+
+            return textureID;
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to load texture: " + filePath);
+        }
     }
 
     /**
