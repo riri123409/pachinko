@@ -1,21 +1,7 @@
 {
     "java.home": "C:/Program Files/Java/jdk-22",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "c:\\Program Files\\Java\\javafx-sdk-23.0.2\\lib\\javafx.base.jar",
-        "c:\\Program Files\\Java\\javafx-sdk-23.0.2\\lib\\javafx.controls.jar",
-        "c:\\Program Files\\Java\\javafx-sdk-23.0.2\\lib\\javafx.fxml.jar",
-        "c:\\Program Files\\Java\\javafx-sdk-23.0.2\\lib\\javafx.graphics.jar",
-        "c:\\Program Files\\Java\\javafx-sdk-23.0.2\\lib\\javafx.media.jar",
-        "c:\\Program Files\\Java\\javafx-sdk-23.0.2\\lib\\javafx.swing.jar",
-        "c:\\Program Files\\Java\\javafx-sdk-23.0.2\\lib\\javafx.web.jar",
-        "c:\\Program Files\\Java\\javafx-sdk-23.0.2\\lib\\javafx-swt.jar",
-        "C:\\Program Files\\Java\\lwjgl2\\lwjgl-2.9.3\\jar\\lwjgl.jar",
-        "C:\\Program Files\\Java\\lwjgl2\\lwjgl-2.9.3\\jar\\lwjgl_util.jar",
-        "C:\\Program Files\\Java\\lwjgl2\\lwjgl-2.9.3\\jar\\slick-util.jar",
-        "lib/j3dcore.jar",
-        "lib/j3dutils.jar",
-        "lib/vecmath.jar"
+        "lib/**/*.jar"
     ],
     "makefile.configureOnOpen": false
 }
