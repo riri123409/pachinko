@@ -1,3 +1,6 @@
+/*
+ * その他当たりの時
+ */
 public class Hit {
     public void Hit_lottery() {
         Set_randam rand = new Set_randam();

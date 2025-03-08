@@ -1,3 +1,7 @@
+
+/*
+ * 乱数
+ */
 import java.util.Random;
 
 public class Set_randam {

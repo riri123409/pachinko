@@ -1,9 +1,6 @@
 import javax.swing.*;
 
-import org.newdawn.slick.opengl.TextureLoader;
-
 import java.awt.*;
-import java.io.InputStream;
 
 public class Main {
     public static void main(String[] args) {
