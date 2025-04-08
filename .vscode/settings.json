@@ -3,5 +3,12 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ],
-    "makefile.configureOnOpen": false
+    "makefile.configureOnOpen": false,
+    "java.completion.imports.enabled": false,
+    "java.completion.importOrder": [],
+    "java.referencesCodeLens.enabled": false,
+    "java.implementationsCodeLens.enabled": false,
+    "[java]": {
+        "editor.formatOnSave": false
+    }
 }

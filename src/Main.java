@@ -1,9 +1,9 @@
 import javax.swing.*;
-
 import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
+        Slot slot = new Slot();
         // フレーム（ウィンドウ）を作成
         JFrame frame = new JFrame("Swing ボタンの例");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,6 +32,6 @@ public class Main {
     public static void onButtonClick(JFrame frame) {
         // JOptionPane.showMessageDialog(frame, "ボタンがクリックされました！");
         Lottery lot = new Lottery();
-        lot.lottery();
+        lot.lottery(Slot);
     }
 }

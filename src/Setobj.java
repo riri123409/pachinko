@@ -25,7 +25,7 @@ class ObjTransform {
 }
 
 public class Setobj {
-    private static final int MODEL_COUNT = 9; // 9つのモデル
+    private static final int MODEL_COUNT = 8; // 8つのモデル
     private static OBJLoader loader;
     private static Obj[] models = new Obj[MODEL_COUNT];
     private static int[] textureID = new int[MODEL_COUNT];
@@ -34,7 +34,7 @@ public class Setobj {
         loader = new OBJLoader();
 
         try {
-            // 9個のOBJモデルをロード
+            // 8個のOBJモデルをロード
             for (int i = 0; i < MODEL_COUNT; i++) {
                 models[i] = loader.loadModel(new File("obj/" + (i + 1) + ".obj"));
                 textureID[i] = loader.loadTexture("/resource/" + (i + 1) + ".png");
@@ -82,7 +82,7 @@ public class Setobj {
         GL11.glPushMatrix();// 現在の変換行列を保存
         GL11.glEnable(GL11.GL_BLEND);
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-        GL11.glColor4f(1.0f, 1.0f, 1.0f, 0.5f);
+        GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
         GL11.glTranslatef(xPos, yPos, 0); // 3×3配置
         GL11.glRotatef(angles, 0.0f, 0.0f, 0.0f);// GL11.glRotatef(angle, x, y, z)
         loader.render(setobj.getModels()[i], setobj.getTextureID()[i]);

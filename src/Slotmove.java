@@ -1,21 +1,32 @@
 public class Slotmove {
     private Setobj setobj;
     private ObjTransform objTransform;
+    private int[] initial_number;
 
     public Slotmove(Setobj setobj, ObjTransform objTransform) {
-        this.setobj = setobj;
-        this.objTransform = objTransform;
+        // this.setobj = setobj;
+        // this.objTransform = objTransform;
+        // this.initial_number = new int[9];
+        // int j = -4;
+        // for (int i = 0; i < 8; i++)
+        // {
+        //     initial_number[i] = objTransform.index + j;
+        //     if (initial_number[i] < 0) {
+        //         initial_number[i] = 8 + initial_number[i];
+        //     }
+        //     if (initial_number[i] > 7) {
+        //         initial_number[i] = initial_number[i] - 8;
+        //     }
+        //     System.out.println(initial_number[i]);
+        //     j++;
+        // }
     }
 
     public void update() {
-        setobj.setobj_setobj(objTransform.xPos, objTransform.yPos - 1.2f, 0, 0, setobj);
-        setobj.setobj_setobj(objTransform.xPos, objTransform.yPos - 0.9f, 0, 1, setobj);
-        setobj.setobj_setobj(objTransform.xPos, objTransform.yPos - 0.6f, 0, 2, setobj);
-        setobj.setobj_setobj(objTransform.xPos, objTransform.yPos - 0.3f, 0, 3, setobj);
-        setobj.setobj_setobj(objTransform.xPos, objTransform.yPos, 0, 4, setobj);
-        setobj.setobj_setobj(objTransform.xPos, objTransform.yPos + 0.3f, 0, 5, setobj);
-        setobj.setobj_setobj(objTransform.xPos, objTransform.yPos + 0.6f, 0, 6, setobj);
-        setobj.setobj_setobj(objTransform.xPos, objTransform.yPos + 0.9f, 0, 7, setobj);
-        setobj.setobj_setobj(objTransform.xPos, objTransform.yPos + 1.2f, 0, 8, setobj);
+        // float j = -1.2f;
+        // for (int i = 0; i < 8; i++) {
+        //     setobj.setobj_setobj(objTransform.xPos, objTransform.yPos + j, 0, initial_number[i], setobj);
+        //     j = j + 0.3f;
+        // }
     }
 }
