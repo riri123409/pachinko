@@ -6,7 +6,7 @@ public class Slotnumber {
     {
         Set_randam rand = new Set_randam();
         this.number = new int[3];
-        this.number[0] = rand.set_randam(9);
+        this.number[0] = rand.set_randam(7);
         this.number[1] = this.number[0];
         this.number[2] = this.number[0];
         return number;
@@ -16,10 +16,10 @@ public class Slotnumber {
     {
         Set_randam rand = new Set_randam();
         this.number = new int[3];
-        this.number[0] = rand.set_randam(9);
+        this.number[0] = rand.set_randam(7);
         while(true)
         {
-            this.number[1] = rand.set_randam(9);
+            this.number[1] = rand.set_randam(7);
             if (this.number[1] != this.number[0]) {
                 break;
             }
@@ -32,17 +32,17 @@ public class Slotnumber {
     {
         Set_randam rand = new Set_randam();
         this.number = new int[3];
-        this.number[0] = rand.set_randam(9);
+        this.number[0] = rand.set_randam(7);
         while(true)
         {
-            this.number[1] = rand.set_randam(9);
+            this.number[1] = rand.set_randam(7);
             if (this.number[1] != this.number[0]) {
                 break;
             }
         }
         while(true)
         {
-            this.number[2] = rand.set_randam(9);
+            this.number[2] = rand.set_randam(7);
             if (this.number[2] != this.number[0]) {
                 break;
             }

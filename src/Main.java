@@ -4,6 +4,7 @@ import java.awt.*;
 public class Main {
     public static void main(String[] args) {
         Slot slot = new Slot();
+        slot.slot_main();
         // フレーム（ウィンドウ）を作成
         JFrame frame = new JFrame("Swing ボタンの例");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -17,7 +18,7 @@ public class Main {
         button.setPreferredSize(new Dimension(80, 30)); // ボタンサイズを指定
 
         // ボタンをクリックしたときのアクションを設定
-        button.addActionListener(e -> onButtonClick(frame));
+        button.addActionListener(e -> onButtonClick(frame, slot));
 
         // **ボタンをパネルに追加**
         panel.add(button);
@@ -29,9 +30,8 @@ public class Main {
         frame.setVisible(true);
     }
 
-    public static void onButtonClick(JFrame frame) {
-        // JOptionPane.showMessageDialog(frame, "ボタンがクリックされました！");
+    public static void onButtonClick(JFrame frame, Slot slot) {
         Lottery lot = new Lottery();
-        lot.lottery(Slot);
+        slot.setDisplaynumber(lot.lottery());
     }
 }
