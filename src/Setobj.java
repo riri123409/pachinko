@@ -25,10 +25,14 @@ class ObjTransform {
 }
 
 public class Setobj {
-    private static final int MODEL_COUNT = 8; // 8つのモデル
+    private static final int MODEL_COUNT = 8; // 8つの数字モデル
     private static OBJLoader loader;
     private static Obj[] models = new Obj[MODEL_COUNT];
     private static int[] textureID = new int[MODEL_COUNT];
+
+    private static final int HOLD_MODEL = 8; // 5つの保留
+    private static Obj[] hold_models = new Obj[HOLD_MODEL];
+    //private static int[] textureID = new int[MODEL_COUNT];
 
     public void setobj_load() {
         loader = new OBJLoader();
@@ -39,6 +43,18 @@ public class Setobj {
                 models[i] = loader.loadModel(new File("obj/" + (i + 1) + ".obj"));
                 textureID[i] = loader.loadTexture("/resource/" + (i + 1) + ".png");
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        try {
+            // 5個の保留をロード
+            hold_models[0] = loader.loadModel(new File("obj/write.obj"));
+            hold_models[1] = loader.loadModel(new File("obj/blue.obj"));
+            hold_models[2] = loader.loadModel(new File("obj/green.obj"));
+            hold_models[3] = loader.loadModel(new File("obj/red.obj"));
+            hold_models[4] = loader.loadModel(new File("obj/gold.obj"));
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
